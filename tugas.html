@@ -1,0 +1,46 @@
+<!--
+nama : muhammad fikri indriansyah
+NIM : 3411191057
+Kelas : DSE B
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tugas Implementasi Interface</title>
+</head>
+<body>
+
+    <form name="formTugas" id="tugasku">
+    <input type="text" name="username" id="username"placeholder="Username" minlength="3" maxlength="15" ><br>
+
+    <input type="password" name="password" id="pw1"placeholder="Password" minlength="4" pattern="/^\w+([\.-]?\w+"><br>
+
+    <input type="password" name="repeat" id="pw2" placeholder="UlangiPassword"><br>
+    <input type="email" name="email" id="email" placeholder="Email"><br>
+    
+    <input type=”text” name=”telp” id=”telp” pattern="[\d]{10,12}" placeholder=”NomorTelpon”><br>
+
+    <textarea id="alamat" style="width: 167px;" required >Alamat</textarea><br>
+    <input type="submit" name="" value="Submit">
+    
+</form>
+
+<script type="text/javascript">
+    window.onload = function () {
+        document.getElementById("pw1").onchange = validatePassword;
+        document.getElementById("pw2").onchange = validatePassword;
+    }
+    function validatePassword(){
+        var pass2=document.getElementById("pw2").value;
+        var pass1=document.getElementById("pw1").value;
+        if(pass1!=pass2)
+            document.getElementById("pw2").setCustomValidity("Passwords Tidak Sama, Coba Lagi");
+        else
+            document.getElementById("pw2").setCustomValidity('');
+    }
+</script>
+
+</body>
+</html>
